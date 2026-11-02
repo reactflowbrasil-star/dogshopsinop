@@ -137,3 +137,30 @@
   transition: transform 150ms ease, box-shadow 150ms ease;
   &:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 0 var(--secondary); }
 }
+
+/* Hero background slideshow: 5 slides x 6s = 30s cycle */
+@keyframes hero-slide {
+  0% { opacity: 0; transform: scale(1.08); }
+  4% { opacity: 0.35; }
+  20% { opacity: 0.35; }
+  24% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+.hero-slide { opacity: 0; animation: hero-slide 30s linear infinite; will-change: opacity, transform; }
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-in { animation: hero-in 0.9s cubic-bezier(.2,.7,.2,1) both; }
+
+@keyframes paw-float {
+  0%, 100% { transform: translateY(0) rotate(-12deg); }
+  50% { transform: translateY(-16px) rotate(8deg); }
+}
+.paw-float { animation: paw-float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .hero-in, .paw-float { animation: none; }
+  .hero-slide:first-child { opacity: 0.3; }
+}
