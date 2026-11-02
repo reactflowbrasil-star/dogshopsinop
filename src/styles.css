@@ -141,8 +141,8 @@
 /* Hero background slideshow: 5 slides x 6s = 30s cycle */
 @keyframes hero-slide {
   0% { opacity: 0; transform: scale(1.08); }
-  4% { opacity: 0.35; }
-  20% { opacity: 0.35; }
+  4% { opacity: 0.6; }
+  20% { opacity: 0.6; }
   24% { opacity: 0; transform: scale(1); }
   100% { opacity: 0; transform: scale(1); }
 }

@@ -186,7 +186,7 @@ function Index() {
               style={{ animationDelay: `${i * 6}s` }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/30" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
           <PawPrint className="paw-float absolute left-[8%] top-[18%] h-10 w-10 text-primary/40" />
           <PawPrint className="paw-float absolute left-[45%] bottom-[14%] h-8 w-8 text-primary/30 [animation-delay:2s]" />
