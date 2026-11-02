@@ -55,6 +55,8 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "https://wa.me/5500000000000";
 
+const heroSlides = [galeria1, galeria2, sobreImg, galeria3, banhoImg];
+
 const nav = [
   { href: "#servicos", label: "Serviços" },
   { href: "#sobre", label: "Sobre" },
@@ -174,8 +176,24 @@ function Index() {
 
       {/* Hero */}
       <section id="inicio" className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 md:grid-cols-2 md:pb-24 md:pt-20">
-          <div>
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          {heroSlides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              className="hero-slide absolute inset-0 h-full w-full object-cover"
+              style={{ animationDelay: `${i * 6}s` }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/30" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+          <PawPrint className="paw-float absolute left-[8%] top-[18%] h-10 w-10 text-primary/40" />
+          <PawPrint className="paw-float absolute left-[45%] bottom-[14%] h-8 w-8 text-primary/30 [animation-delay:2s]" />
+          <PawPrint className="paw-float absolute right-[6%] top-[10%] h-12 w-12 text-primary/30 [animation-delay:4s]" />
+        </div>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 md:grid-cols-2 md:pb-24 md:pt-20">
+          <div className="hero-in">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-accent-foreground">
               <PawPrint className="h-4 w-4" /> Petshop completo para cães e gatos
             </span>
@@ -212,7 +230,7 @@ function Index() {
               </span>
             </div>
           </div>
-          <div className="relative">
+          <div className="hero-in relative [animation-delay:200ms]">
             <div className="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl" aria-hidden />
             <div className="relative overflow-hidden rounded-[2rem] shadow-soft">
               <img
