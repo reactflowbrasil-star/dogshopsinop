@@ -23,7 +23,6 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import logoDark from "@/assets/dogshop_logo_dark.png.asset.json";
-import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
 import heroImg from "@/assets/hero-pets.jpg";
 import banhoImg from "@/assets/banho-tosa.jpg";
 import produtosImg from "@/assets/produtos.jpg";
@@ -510,7 +509,6 @@ function Index() {
         <MessageCircle className="h-6 w-6" />
       </a>
 
-      <img src={logoLight.url} alt="" className="hidden" width={1738} height={842} loading="lazy" aria-hidden />
     </div>
   );
 }

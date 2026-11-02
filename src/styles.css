@@ -34,6 +34,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -75,6 +76,7 @@
   --popover-foreground: oklch(0.3 0.004 0);
   --primary: oklch(0.84 0.16 82);
   --primary-foreground: oklch(0.25 0.004 0);
+  --primary-deep: oklch(0.62 0.13 70);
   --secondary: oklch(0.32 0.004 0);
   --secondary-foreground: oklch(0.985 0.012 90);
   --muted: oklch(0.95 0.02 88);
@@ -100,7 +102,7 @@
   --sidebar-border: oklch(0.9 0.02 85);
   --sidebar-ring: oklch(0.84 0.16 82);
   --shadow-pop: 6px 6px 0 0 var(--secondary);
-  --shadow-soft: 0 20px 50px -20px color-mix(in oklab, var(--secondary) 35%, transparent);
+  --shadow-soft: 0 24px 60px -24px color-mix(in oklab, var(--secondary) 30%, transparent);
 }
 
 @layer base {
