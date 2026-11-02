@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The landing page lives in `src/routes/index.tsx`; brand logos are served via `lovable-assets` pointers in `src/assets/` (dark logo for light backgrounds, light logo for dark). Why: keeps binaries out of the repo.

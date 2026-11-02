@@ -43,7 +43,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#inicio" aria-label="DOG SHOP">
-            <img src={logoDark.url} alt="DOG SHOP" className="h-10 w-auto md:h-12" width={1738} height={842} />
+            <img src={logoDark.url} alt="DOG SHOP" className="h-12 w-auto md:h-14" width={1738} height={842} />
           </a>
           <nav className="hidden items-center gap-8 font-bold md:flex">
             <a href="#servicos" className="transition-colors hover:text-primary">Serviços</a>
