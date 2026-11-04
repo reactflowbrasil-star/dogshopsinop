@@ -132,15 +132,15 @@ type GalleryItem = {
 };
 
 // Para adicionar vídeos: { type: "video", src: "URL do .mp4", poster: "URL da capa", alt: "..." }
-const gallery: GalleryItem[] = [
-  { type: "image", src: galeria1, alt: "Poodle branco após banho e tosa", className: "row-span-2" },
-  { type: "image", src: banhoImg, alt: "Cachorro tomando banho" },
-  { type: "image", src: galeria2, alt: "Filhote de corgi com bandana amarela" },
-  { type: "image", src: galeria3, alt: "Gato laranja descansando em caminha" },
-  { type: "image", src: sobreImg, alt: "Golden retriever sendo secado após o banho" },
-  { type: "image", src: produtosImg, alt: "Rações e acessórios", className: "md:col-span-2" },
-  { type: "image", src: heroImg, alt: "Cachorro e gato juntos" },
-];
+const gallery: GalleryItem[] = Array.from({ length: 54 }, (_, index) => {
+  const number = index + 1;
+
+  return {
+    type: "image",
+    src: `/galeria/foto-${String(number).padStart(2, "0")}.jpeg`,
+    alt: `Foto ${number} da DOG SHOP`,
+  };
+});
 
 const testimonials = [
   {
