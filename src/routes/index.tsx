@@ -201,7 +201,7 @@ function SectionHeading({ eyebrow, title, text, center = false }: { eyebrow: str
 
 function VipCard({ className = "" }: { className?: string }) {
   return (
-    <div className={`vip-card relative aspect-[1.586/1] w-full max-w-md overflow-hidden rounded-3xl p-7 text-secondary-foreground shadow-soft ${className}`}>
+    <div className={`vip-card relative aspect-[1.586/1] w-full max-w-md overflow-hidden rounded-3xl p-5 sm:p-7 text-secondary-foreground shadow-soft ${className}`}>
       <div className="vip-shine pointer-events-none absolute inset-0" aria-hidden />
       <PawPrint className="pointer-events-none absolute -bottom-8 -right-6 h-48 w-48 rotate-[-18deg] text-primary/10" aria-hidden />
       <div className="relative flex h-full flex-col justify-between">
@@ -217,12 +217,12 @@ function VipCard({ className = "" }: { className?: string }) {
         </div>
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="font-display text-lg tracking-[0.25em] text-primary">MENSALISTA</p>
+            <p className="font-display text-base tracking-[0.2em] text-primary sm:text-lg sm:tracking-[0.25em]">MENSALISTA</p>
             <p className="mt-1 text-xs uppercase tracking-widest text-secondary-foreground/60">Clube de benefícios DOG SHOP</p>
           </div>
           <div className="text-right">
             <p className="text-[10px] uppercase tracking-widest text-secondary-foreground/60">Economia</p>
-            <p className="font-display text-2xl leading-none text-primary">até 30%</p>
+            <p className="whitespace-nowrap font-display text-xl leading-none text-primary sm:text-2xl">até 30%</p>
           </div>
         </div>
       </div>
@@ -624,14 +624,16 @@ function Index() {
               ) : (
                 <img src={active.src} alt={active.alt} className="max-h-[85vh] w-full rounded-2xl object-contain" />
               ))}
-            <button
-              type="button"
-              onClick={() => setActive(null)}
-              aria-label="Fechar"
-              className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground"
-            >
-              <X className="h-5 w-5" />
-            </button>
+            <div className="absolute right-3 top-3">
+              <button
+                type="button"
+                onClick={() => setActive(null)}
+                aria-label="Fechar"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
           </DialogContent>
         </Dialog>
       </section>
