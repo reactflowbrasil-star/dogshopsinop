@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Clock,
   MapPin,
-  Phone,
   Instagram,
   MessageCircle,
   Star,
@@ -59,7 +58,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/5500000000000";
+const WHATSAPP = "https://wa.me/5566996222228";
+const WHATSAPP_NUMBER = "(66) 99622-2228";
+const INSTAGRAM_URL = "https://instagram.com/dogshop.sinop";
+const INSTAGRAM_HANDLE = "@dogshop.sinop";
+const ADDRESS = "Av. das Palmeiras, nº 1966 — Jd. das Palmeiras, Sinop - MT";
+const HOURS = "Seg a Sex: 7h às 11h30 e 13h às 18h";
+const HOURS_SAT = "Sáb: 7h às 11h30";
 
 const heroSlides = [galeria1, banhoImg, sobreImg, galeria2, galeria3];
 
@@ -606,7 +611,7 @@ function Index() {
           </div>
           <div className="mt-10 text-center">
             <a
-              href="https://instagram.com/dogshop"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 font-bold transition-colors hover:bg-background"
@@ -705,10 +710,10 @@ function Index() {
           </div>
           <ul className="space-y-5 self-center">
             {[
-              { icon: MapPin, label: "Endereço", value: "Rua dos Pets, 123 — Centro" },
-              { icon: Phone, label: "Telefone", value: "(00) 00000-0000" },
-              { icon: Clock, label: "Horário", value: "Seg a Sáb, 8h às 19h" },
-              { icon: Instagram, label: "Instagram", value: "@dogshop" },
+              { icon: MapPin, label: "Endereço", value: ADDRESS },
+              { icon: MessageCircle, label: "WhatsApp", value: WHATSAPP_NUMBER },
+              { icon: Clock, label: "Horário", value: `${HOURS} · ${HOURS_SAT}` },
+              { icon: Instagram, label: "Instagram", value: INSTAGRAM_HANDLE },
             ].map(({ icon: Icon, label, value }) => (
               <li key={label} className="flex items-center gap-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary-foreground/10 text-primary">
@@ -748,10 +753,11 @@ function Index() {
           <div>
             <p className="mb-4 font-display">Contato</p>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Rua dos Pets, 123 — Centro</li>
-              <li>(00) 00000-0000</li>
-              <li>Seg a Sáb, 8h às 19h</li>
-              <li>@dogshop</li>
+              <li>{ADDRESS}</li>
+              <li>WhatsApp: {WHATSAPP_NUMBER}</li>
+              <li>{HOURS}</li>
+              <li>{HOURS_SAT}</li>
+              <li>{INSTAGRAM_HANDLE}</li>
             </ul>
           </div>
         </div>
