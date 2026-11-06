@@ -58,8 +58,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/5566996222228";
-const WHATSAPP_NUMBER = "(66) 99622-2228";
+const WHATSAPP = "https://wa.me/5566999622228";
+const WHATSAPP_NUMBER = "(66) 99962-2228";
 const INSTAGRAM_URL = "https://instagram.com/dogshop.sinop";
 const INSTAGRAM_HANDLE = "@dogshop.sinop";
 const ADDRESS = "Av. das Palmeiras, nº 1966 — Jd. das Palmeiras, Sinop - MT";
