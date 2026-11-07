@@ -46,7 +46,7 @@ export function BioCard() {
         <img
           src={dogImg}
           alt="Chow chow após banho e tosa na Dog Shop"
-          className="hero-in mt-4 w-full max-w-sm drop-shadow-2xl"
+          className="hero-in mt-3 w-full max-w-[180px] drop-shadow-2xl sm:max-w-[220px]"
         />
 
         <span className="mt-2 rounded-full bg-primary px-6 py-2 text-sm font-extrabold tracking-[0.2em] text-primary-foreground">
@@ -71,7 +71,7 @@ export function BioCard() {
           </span>
         </a>
 
-        <div className="mt-3 grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="mt-3 grid w-full grid-cols-2 gap-3">
           {links.map(({ icon: Icon, label, value, href, internal }) => {
             const cls = "flex items-center gap-3 rounded-2xl border border-primary/50 bg-secondary-foreground/5 p-4 text-left transition hover:scale-[1.02] hover:border-primary";
             const inner = (
