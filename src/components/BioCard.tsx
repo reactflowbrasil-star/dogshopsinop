@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Globe, MessageCircle, Star, PawPrint, Pointer } from "lucide-react";
 import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
-import dogImg from "@/assets/cartao-chow.jpg";
+import dogAsset from "@/assets/cartao-dog.png.asset.json";
+const dogImg = dogAsset.url;
 
 const links = [
   { icon: Instagram, label: "Instagram", value: "@dogshop.sinop", href: "https://instagram.com/dogshop.sinop" },
@@ -37,7 +38,7 @@ export function BioCard() {
         <img
           src={dogImg}
           alt="Chow chow após banho e tosa na Dog Shop"
-          className="hero-in mt-4 w-full max-w-sm rounded-3xl [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_75%)]"
+          className="hero-in mt-4 w-full max-w-sm drop-shadow-2xl"
         />
 
         <span className="mt-2 rounded-full bg-primary px-6 py-2 text-sm font-extrabold tracking-[0.2em] text-primary-foreground">
