@@ -250,3 +250,22 @@
     opacity: 1;
   }
 }
+
+/* Google Business review card: subtle premium highlight */
+@keyframes google-review-glow {
+  0%, 100% { box-shadow: 0 8px 24px rgba(0,0,0,.14), 0 0 0 1px rgba(255,194,51,.25); }
+  50% { box-shadow: 0 12px 30px rgba(255,190,48,.17), 0 0 0 1px rgba(255,194,51,.62); }
+}
+.bio-links > .google-review-card {
+  position: relative;
+  border-color: color-mix(in oklab, var(--primary) 62%, transparent);
+  background: linear-gradient(135deg, rgba(255,194,51,.16), rgba(255,255,255,.07) 62%);
+  animation: bio-reveal 620ms cubic-bezier(.2,.75,.25,1) 1060ms both, google-review-glow 4.2s ease-in-out 1.8s infinite;
+}
+.bio-links > .google-review-card:hover {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(255,194,51,.23), rgba(255,255,255,.11) 62%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bio-links > .google-review-card { animation: none; opacity: 1; }
+}
