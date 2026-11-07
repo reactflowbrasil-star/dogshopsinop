@@ -17,7 +17,7 @@ const links = [
     icon: Star,
     label: "Avalie no Google",
     value: "Deixe sua avaliação",
-    href: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Dog Shop Sinop MT"),
+    href: "https://www.google.com/maps/place/Pet+Shop+Sinop+-+DogShop/@-11.8454377,-55.5102877,17z/data=!4m14!1m7!3m6!1s0x93a781ebc3826a85:0x20e324ee2c800685!2sPet+Shop+Sinop+-+DogShop!8m2!3d-11.8454377!4d-55.5102877!16s%2Fg%2F11krhv0359!3m5!1s0x93a781ebc3826a85:0x20e324ee2c800685!8m2!3d-11.8454377!4d-55.5102877!16s%2Fg%2F11krhv0359?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
