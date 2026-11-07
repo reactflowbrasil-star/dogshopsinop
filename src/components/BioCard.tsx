@@ -24,11 +24,19 @@ const links = [
 export function BioCard() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-secondary px-4 py-10 text-secondary-foreground">
-      <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
-      <PawPrint className="paw-float pointer-events-none absolute right-6 top-8 h-14 w-14 text-primary/40" />
-      <PawPrint className="paw-float pointer-events-none absolute bottom-10 left-6 h-12 w-12 text-primary/30" />
-
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="bio-blob absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+        <div className="bio-blob absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" style={{ animationDelay: "-7s" }} />
+        <div className="bio-blob absolute left-1/3 top-1/2 h-64 w-64 rounded-full bg-primary/10 blur-3xl" style={{ animationDelay: "-3s" }} />
+        <div className="bio-sweep absolute -top-1/4 h-[150%] w-24 bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+        {[8, 22, 40, 58, 74, 90].map((left, i) => (
+          <PawPrint
+            key={left}
+            className="bio-paw absolute -bottom-12 text-primary"
+            style={{ left: `${left}%`, width: 18 + (i % 3) * 10, height: 18 + (i % 3) * 10, animationDuration: `${16 + i * 3}s`, animationDelay: `${-i * 4}s` }}
+          />
+        ))}
+      </div>
       <div className="relative mx-auto flex max-w-md flex-col items-center text-center">
         <img src={logoLight.url} alt="Dog Shop" className="hero-in w-56" />
         <div className="mt-4 flex w-full items-center gap-3 text-[11px] font-bold tracking-[0.3em]">

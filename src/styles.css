@@ -188,3 +188,25 @@
   .hero-slide, .hero-in, .paw-float, .vip-shine::after { animation: none; }
   .hero-slide:first-child { opacity: 0.3; }
 }
+
+/* Bio card animated background */
+@keyframes bio-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.15); }
+}
+.bio-blob { animation: bio-blob 14s ease-in-out infinite; }
+@keyframes bio-rise {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.35; }
+  85% { opacity: 0.35; }
+  100% { transform: translateY(-110vh) rotate(40deg); opacity: 0; }
+}
+.bio-paw { animation: bio-rise linear infinite; }
+@keyframes bio-sweep {
+  0% { transform: translateX(-100%) rotate(12deg); }
+  100% { transform: translateX(200%) rotate(12deg); }
+}
+.bio-sweep { animation: bio-sweep 9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bio-blob, .bio-paw, .bio-sweep { animation: none; opacity: 0.2; }
+}
