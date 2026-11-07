@@ -37,7 +37,7 @@ export function BioCard() {
           />
         ))}
       </div>
-      <div className="relative mx-auto flex max-w-md flex-col items-center text-center">
+      <div className="bio-stagger relative mx-auto flex max-w-md flex-col items-center text-center">
         <img src={logoLight.url} alt="Dog Shop" className="hero-in w-40 sm:w-48" />
         <div className="mt-3 flex w-full items-center gap-3 text-[9px] font-bold tracking-[0.28em] text-white/80 sm:text-[10px]">
           <span className="h-px flex-1 bg-primary/80" />CUIDADO COM CARINHO, EM CADA DETALHE<span className="h-px flex-1 bg-primary/80" />
@@ -61,7 +61,7 @@ export function BioCard() {
           href="https://wa.me/5566999622228"
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-5 flex w-full items-center gap-3 rounded-[1.4rem] border border-white/20 bg-gradient-to-r from-[#ffd04b] via-[#ffc233] to-[#f5a91a] p-3.5 text-left text-[#211a10] shadow-[0_14px_34px_rgba(255,190,48,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(255,190,48,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#211d1a]"
+          className="bio-cta group mt-5 flex w-full items-center gap-3 rounded-[1.4rem] border border-white/20 bg-gradient-to-r from-[#ffd04b] via-[#ffc233] to-[#f5a91a] p-3.5 text-left text-[#211a10] shadow-[0_14px_34px_rgba(255,190,48,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(255,190,48,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#211d1a]"
         >
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#211a10]/10 ring-1 ring-[#211a10]/10 transition group-hover:bg-[#211a10]/15"><MessageCircle className="h-5 w-5" /></span>
           <span className="min-w-0 flex-1">
@@ -72,7 +72,7 @@ export function BioCard() {
           <ArrowUpRight className="mr-1 h-5 w-5 shrink-0 opacity-60 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
         </a>
 
-        <div className="mt-3 grid w-full grid-cols-2 gap-3">
+        <div className="bio-links mt-3 grid w-full grid-cols-2 gap-3">
           {links.map(({ icon: Icon, label, value, href, internal }) => {
             const cls = "group flex min-h-[76px] items-center gap-2 rounded-[1.2rem] border border-white/15 bg-white/[0.055] p-3 text-left shadow-[0_8px_24px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:bg-white/[0.10] hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
             const inner = (
