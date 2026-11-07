@@ -74,13 +74,15 @@ export function BioCard() {
 
         <div className="bio-links mt-3 grid w-full grid-cols-2 gap-3">
           {links.map(({ icon: Icon, label, value, href, internal }) => {
-            const cls = "group flex min-h-[76px] items-center gap-2 rounded-[1.2rem] border border-white/15 bg-white/[0.055] p-3 text-left shadow-[0_8px_24px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:bg-white/[0.10] hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
+            const isGoogleReview = label === "Avalie no Google";
+            const cls = "group flex min-h-[76px] items-center gap-2 rounded-[1.2rem] border border-white/15 bg-white/[0.055] p-3 text-left shadow-[0_8px_24px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:bg-white/[0.10] hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" + (isGoogleReview ? " google-review-card" : "");
             const inner = (
               <>
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_5px_14px_rgba(255,190,48,0.18)] transition group-hover:scale-105"><Icon className="h-4 w-4" /></span>
+                <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl shadow-[0_5px_14px_rgba(255,190,48,0.18)] transition group-hover:scale-105 ${isGoogleReview ? "bg-white" : "bg-primary text-primary-foreground"}`}>{isGoogleReview ? <svg aria-label="Google" role="img" viewBox="0 0 48 48" className="h-5 w-5"><path fill="#4285F4" d="M47.5 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h13.2c-.58 2.96-2.26 5.48-4.77 7.18l7.73 6C44.67 37.77 47.5 31.67 47.5 24.55z" /><path fill="#34A853" d="M24 48c6.48 0 11.93-2.15 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.29 0-11.62-4.24-13.52-9.95l-7.98 6.19C6.48 42.62 14.62 48 24 48z" /><path fill="#FBBC05" d="M10.48 28.55A14.4 14.4 0 0 1 9.73 24c0-1.48.25-2.9.75-4.25L2.5 13.56A23.9 23.9 0 0 0 0 24c0 3.85.92 7.49 2.55 10.69z" /><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.7 9.5 24 9.5z" /></svg> : <Icon className="h-4 w-4" />}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[8px] font-bold tracking-[0.18em] uppercase text-white/65">{label}</span>
-                  <span className="block truncate text-xs font-extrabold text-white sm:text-sm">{value}</span>
+                  <span className="block truncate text-xs font-extrabold text-white sm:text-sm">{isGoogleReview ? "Deixe sua avaliação" : value}</span>
+                  {isGoogleReview && <span className="mt-0.5 block text-[8px] font-semibold tracking-wide text-primary/90">Google Business</span>}
                 </span>
                 <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/35 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
               </>
