@@ -1,25 +1,37 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, Globe, MessageCircle, Star, PawPrint, Pointer, ArrowUpRight } from "lucide-react";
+import { Instagram, MapPin, MessageCircle, PawPrint, Pointer, Phone, Globe } from "lucide-react";
 import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
 import dogAsset from "@/assets/cartao-dog.png.asset.json";
 const dogImg = dogAsset.url;
 
 const links = [
-  { icon: Instagram, label: "Instagram", value: "@dogshop.sinop", href: "https://instagram.com/dogshop.sinop" },
+  { icon: MessageCircle, kind: "whatsapp", label: "WhatsApp", value: "(66) 99962-2228", href: "https://wa.me/5566999622228" },
+  { icon: Instagram, kind: "instagram", label: "Instagram", value: "@dogshop.sinop", href: "https://instagram.com/dogshop.sinop" },
   {
-    icon: MapPin,
-    label: "Localização",
-    value: "Sinop – MT",
-    href: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Av. das Palmeiras, 1966, Jd. das Palmeiras, Sinop - MT"),
-  },
-  { icon: Globe, label: "Nosso site", value: "dogshopsinop.com.br", href: "/", internal: true },
-  {
-    icon: Star,
+    kind: "google",
     label: "Avalie no Google",
-    value: "Deixe sua avaliação",
+    value: "★★★★★",
     href: "https://search.google.com/local/writereview?placeid=ChIJhWqCw-uBp5MRhQaALO4k4yA",
   },
+  {
+    icon: MapPin,
+    kind: "maps",
+    label: "Como chegar",
+    value: "Sinop – MT",
+    href: "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent("Av. das Palmeiras, 1966, Jd. das Palmeiras, Sinop - MT"),
+  },
 ];
+
+function GoogleMark() {
+  return (
+    <svg aria-label="Google" role="img" viewBox="0 0 48 48" className="h-14 w-14 drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+      <path fill="#4285F4" d="M47.5 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h13.2c-.58 2.96-2.26 5.48-4.77 7.18l7.73 6C44.67 37.77 47.5 31.67 47.5 24.55z" />
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.15 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.29 0-11.62-4.24-13.52-9.95l-7.98 6.19C6.48 42.62 14.62 48 24 48z" />
+      <path fill="#FBBC05" d="M10.48 28.55A14.4 14.4 0 0 1 9.73 24c0-1.48.25-2.9.75-4.25L2.5 13.56A23.9 23.9 0 0 0 0 24c0 3.85.92 7.49 2.55 10.69z" />
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.7 9.5 24 9.5z" />
+    </svg>
+  );
+}
 
 export function BioCard() {
   return (
@@ -37,7 +49,7 @@ export function BioCard() {
           />
         ))}
       </div>
-      <div className="bio-stagger relative mx-auto flex max-w-md flex-col items-center text-center">
+      <div className="bio-stagger relative mx-auto flex max-w-lg flex-col items-center text-center">
         <img src={logoLight.url} alt="Dog Shop" className="hero-in w-40 sm:w-48" />
         <div className="mt-3 flex w-full items-center gap-3 text-[9px] font-bold tracking-[0.28em] text-white/80 sm:text-[10px]">
           <span className="h-px flex-1 bg-primary/80" />CUIDADO COM CARINHO, EM CADA DETALHE<span className="h-px flex-1 bg-primary/80" />
@@ -57,43 +69,60 @@ export function BioCard() {
         </h1>
         <p className="mt-1 text-sm text-white/75">Encontre a gente e acompanhe nosso dia a dia.</p>
 
-        <a
-          href="https://wa.me/5566999622228"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bio-cta group mt-5 flex w-full items-center gap-3 rounded-[1.4rem] border border-white/20 bg-gradient-to-r from-[#ffd04b] via-[#ffc233] to-[#f5a91a] p-3.5 text-left text-[#211a10] shadow-[0_14px_34px_rgba(255,190,48,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(255,190,48,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#211d1a]"
-        >
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#211a10]/10 ring-1 ring-[#211a10]/10 transition group-hover:bg-[#211a10]/15"><MessageCircle className="h-5 w-5" /></span>
-          <span className="min-w-0 flex-1">
-            <span className="block text-[9px] font-extrabold tracking-[0.24em] opacity-75">WHATSAPP</span>
-            <span className="block text-base font-extrabold">Inicie uma conversa</span>
-            <span className="block text-xs opacity-80">(66) 99962-2228</span>
-          </span>
-          <ArrowUpRight className="mr-1 h-5 w-5 shrink-0 opacity-60 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
-        </a>
-
-        <div className="bio-links mt-3 grid w-full grid-cols-2 gap-3">
-          {links.map(({ icon: Icon, label, value, href, internal }) => {
-            const isGoogleReview = label === "Avalie no Google";
-            const cls = "group flex min-h-[76px] items-center gap-2 rounded-[1.2rem] border border-white/15 bg-white/[0.055] p-3 text-left shadow-[0_8px_24px_rgba(0,0,0,0.12)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-primary/70 hover:bg-white/[0.10] hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" + (isGoogleReview ? " google-review-card" : "");
-            const inner = (
+        <div className="bio-links mt-6 grid w-full grid-cols-2 gap-3 sm:gap-4">
+          {links.map(({ icon: Icon, kind, label, value, href }) => {
+            const isGoogleReview = kind === "google";
+            const cls = `group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-[1.8rem] border border-[#3a414f]/80 bg-gradient-to-br from-[#202633] to-[#171c27] p-3 text-center shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:from-[#262e3d] hover:to-[#1a202c] hover:shadow-[0_18px_38px_rgba(0,0,0,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isGoogleReview ? "google-review-card" : ""}`;
+            const iconTile = kind === "whatsapp"
+              ? "bg-[#20c963] shadow-[0_8px_20px_rgba(32,201,99,0.22)]"
+              : kind === "instagram"
+                ? "bg-gradient-to-tr from-[#ffd776] via-[#f44755] to-[#a837d5] shadow-[0_8px_20px_rgba(221,65,139,0.24)]"
+                : kind === "maps"
+                  ? "bg-gradient-to-br from-[#4285f4] via-[#34a853] to-[#fbbc05] shadow-[0_8px_20px_rgba(66,133,244,0.24)]"
+                  : "bg-transparent";
+            const card = (
               <>
-                <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl shadow-[0_5px_14px_rgba(255,190,48,0.18)] transition group-hover:scale-105 ${isGoogleReview ? "bg-white" : "bg-primary text-primary-foreground"}`}>{isGoogleReview ? <svg aria-label="Google" role="img" viewBox="0 0 48 48" className="h-5 w-5"><path fill="#4285F4" d="M47.5 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h13.2c-.58 2.96-2.26 5.48-4.77 7.18l7.73 6C44.67 37.77 47.5 31.67 47.5 24.55z" /><path fill="#34A853" d="M24 48c6.48 0 11.93-2.15 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.29 0-11.62-4.24-13.52-9.95l-7.98 6.19C6.48 42.62 14.62 48 24 48z" /><path fill="#FBBC05" d="M10.48 28.55A14.4 14.4 0 0 1 9.73 24c0-1.48.25-2.9.75-4.25L2.5 13.56A23.9 23.9 0 0 0 0 24c0 3.85.92 7.49 2.55 10.69z" /><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.7 9.5 24 9.5z" /></svg> : <Icon className="h-4 w-4" />}</span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[8px] font-bold tracking-[0.18em] uppercase text-white/65">{label}</span>
-                  <span className="block truncate text-xs font-extrabold text-white sm:text-sm">{isGoogleReview ? "Deixe sua avaliação" : value}</span>
-                  {isGoogleReview && <span className="mt-0.5 block text-[8px] font-semibold tracking-wide text-primary/90">Google Business</span>}
+                <span className={`relative grid h-[68px] w-[68px] shrink-0 place-items-center rounded-[1.25rem] transition duration-300 group-hover:scale-105 sm:h-[76px] sm:w-[76px] ${iconTile}`}>
+                  {kind === "google" ? (
+                    <GoogleMark />
+                  ) : kind === "maps" ? (
+                    <span className="grid h-full w-full place-items-center rounded-[1.25rem] bg-[#1b2230]/15">
+                      <Icon className="h-10 w-10 text-white drop-shadow-md" strokeWidth={2.2} />
+                    </span>
+                  ) : kind === "whatsapp" ? (
+                    <>
+                      <Icon className="h-10 w-10 text-white" strokeWidth={2.5} />
+                      <Phone className="absolute h-4 w-4 text-white" strokeWidth={2.8} />
+                    </>
+                  ) : (
+                    <Icon className="h-10 w-10 text-white" strokeWidth={2.1} />
+                  )}
                 </span>
-                <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/35 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                <span className="max-w-full">
+                  <span className="block text-sm font-extrabold text-white sm:text-base">{label}</span>
+                  {kind === "google" ? (
+                    <span className="mt-1 block text-lg leading-none tracking-[0.1em] text-[#ffc233]" aria-label="5 estrelas">★★★★★</span>
+                  ) : (
+                    <span className="mt-1 block truncate text-[10px] font-semibold text-white/65 sm:text-xs">{value}</span>
+                  )}
+                </span>
               </>
             );
-            return internal ? (
-              <Link key={label} to="/" className={cls}>{inner}</Link>
-            ) : (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>
+            return (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+                {card}
+              </a>
             );
           })}
         </div>
+
+        <Link
+          to="/"
+          className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-bold text-white/75 transition hover:border-primary/50 hover:bg-white/[0.1] hover:text-white"
+        >
+          <Globe className="h-4 w-4 text-primary" />
+          Visite nosso site
+        </Link>
 
         <p className="mt-6 text-[10px] font-bold tracking-[0.32em] text-white/75">BANHO • TOSA • AMOR DE VERDADE</p>
         <p className="mt-2 flex items-center gap-2 text-[11px] text-white/55"><Pointer className="h-4 w-4 text-primary" />Toque nos cartões para abrir cada link</p>
