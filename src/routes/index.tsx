@@ -343,15 +343,6 @@ function Index() {
                 className="block h-auto w-full object-contain"
               />
             </div>
-            <div className="relative mt-4 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-soft">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Scissors className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-display text-lg leading-none">+5.000</p>
-                <p className="text-sm text-muted-foreground">banhos e tosas</p>
-              </div>
-            </div>
             <div className="absolute -top-5 right-6 flex items-center gap-2 rounded-2xl bg-secondary px-4 py-3 text-secondary-foreground shadow-soft">
               <BadgePercent className="h-5 w-5 text-primary" />
               <p className="text-sm font-bold">
