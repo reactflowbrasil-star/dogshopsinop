@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, MessageCircle, PawPrint, Pointer, Phone, Globe } from "lucide-react";
+import { Instagram, MapPin, MessageCircle, PawPrint, Pointer, Phone, Globe, Star } from "lucide-react";
 import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
 import dogAsset from "@/assets/cartao-dog.png.asset.json";
 const dogImg = dogAsset.url;
