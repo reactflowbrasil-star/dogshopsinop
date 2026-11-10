@@ -31,6 +31,7 @@ import logoDark from "@/assets/dogshop_logo_dark.png.asset.json";
 import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
 import heroImg from "@/assets/hero-pets.jpg";
 import banhoImg from "@/assets/banho-tosa.jpg";
+import cidaMoreiraImg from "@/assets/IMG-20261110-WA0003.jpg";
 import produtosImg from "@/assets/produtos.jpg";
 import galeria1 from "@/assets/galeria-1.jpg";
 import galeria2 from "@/assets/galeria-2.jpg";
@@ -335,8 +336,8 @@ function Index() {
             <div className="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl" aria-hidden />
             <div className="relative overflow-hidden rounded-[2rem] shadow-soft">
               <img
-                src={banhoImg}
-                alt="Cachorro recebendo banho na DOG SHOP"
+                src={cidaMoreiraImg}
+                alt="Cida Moreira, proprietária e fundadora da DogShop, com um cachorro"
                 width={1024}
                 height={1024}
                 className="aspect-[4/3.4] w-full object-cover"
