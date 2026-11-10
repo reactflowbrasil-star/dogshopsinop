@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, MessageCircle, PawPrint, Pointer, Phone, Globe } from "lucide-react";
+import { Instagram, MapPin, MessageCircle, PawPrint, Pointer, Phone, Globe, Star } from "lucide-react";
 import logoLight from "@/assets/dogshop_logo_light.png.asset.json";
 import dogAsset from "@/assets/cartao-dog.png.asset.json";
 const dogImg = dogAsset.url;
@@ -70,7 +70,7 @@ export function BioCard() {
         <p className="mt-1 text-sm text-white/75">Encontre a gente e acompanhe nosso dia a dia.</p>
 
         <div className="bio-links mt-6 grid w-full grid-cols-2 gap-3 sm:gap-4">
-          {links.map(({ icon: Icon, kind, label, value, href }) => {
+          {links.map(({ icon: Icon = Star, kind, label, value, href }) => {
             const isGoogleReview = kind === "google";
             const cls = `group relative flex aspect-square flex-col items-center justify-center gap-3 overflow-hidden rounded-[1.8rem] border border-[#3a414f]/80 bg-gradient-to-br from-[#202633] to-[#171c27] p-3 text-center shadow-[0_12px_32px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:from-[#262e3d] hover:to-[#1a202c] hover:shadow-[0_18px_38px_rgba(0,0,0,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isGoogleReview ? "google-review-card" : ""}`;
             const iconTile = kind === "whatsapp"

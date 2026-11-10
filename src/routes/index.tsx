@@ -81,7 +81,7 @@ const nav = [
 const stats = [
   { value: "+5.000", label: "banhos realizados" },
   { value: "4,9", label: "avaliação média" },
-  { value: "10 anos", label: "de experiência" },
+  { value: "7 anos", label: "de experiência" },
   { value: "6 dias", label: "abertos por semana" },
 ];
 
