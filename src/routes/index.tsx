@@ -138,15 +138,19 @@ type GalleryItem = {
 };
 
 // Para adicionar vídeos: { type: "video", src: "URL do .mp4", poster: "URL da capa", alt: "..." }
-const gallery: GalleryItem[] = Array.from({ length: 54 }, (_, index) => {
-  const number = index + 1;
+const galleryPhotos = import.meta.glob("../assets/fotosdogshop/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
 
-  return {
+const gallery: GalleryItem[] = Object.entries(galleryPhotos)
+  .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, "pt-BR", { numeric: true }))
+  .map(([, src], index) => ({
     type: "image",
-    src: `/galeria/foto-${String(number).padStart(2, "0")}.jpeg`,
-    alt: `Foto ${number} da DOG SHOP`,
-  };
-});
+    src,
+    alt: `Foto ${index + 1} da DOG SHOP`,
+  }));
 
 const testimonials = [
   {
