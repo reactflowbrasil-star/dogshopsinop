@@ -36,7 +36,7 @@ import produtosImg from "@/assets/produtos.jpg";
 import galeria1 from "@/assets/galeria-1.jpg";
 import galeria2 from "@/assets/galeria-2.jpg";
 import galeria3 from "@/assets/galeria-3.jpg";
-import sobreImg from "@/assets/sobre-equipe.jpg";
+import sobreImg from "@/assets/IMG-20261110-WA0005.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -497,7 +497,7 @@ function Index() {
           <div className="overflow-hidden rounded-[2rem] shadow-soft">
             <img
               src={sobreImg}
-              alt="Profissional da DOG SHOP secando um golden retriever"
+              alt="Equipe e ambiente da Dog Shop Sinop"
               width={1280}
               height={1024}
               loading="lazy"
