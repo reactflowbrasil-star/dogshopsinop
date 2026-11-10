@@ -340,10 +340,10 @@ function Index() {
                 alt="Cida Moreira, proprietária e fundadora da DogShop, com um cachorro"
                 width={1024}
                 height={1024}
-                className="aspect-[4/3.4] w-full object-cover"
+                className="block h-auto w-full object-contain"
               />
             </div>
-            <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-soft">
+            <div className="relative mt-4 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-soft">
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <Scissors className="h-5 w-5" />
               </div>
